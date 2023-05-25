@@ -17,7 +17,7 @@ export default async function Navbar() {
           Todoist
         </Link>
         <div className="flex items-center space-x-8">
-          <Link className="hover:text-gray-500" href="/">
+          <Link className="hover:text-gray-500" href="/dashboard">
             Dashboard
           </Link>
           <Link className="hover:text-gray-500" href="/profile">
