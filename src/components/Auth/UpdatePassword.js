@@ -15,7 +15,7 @@ const UpdatePassword = () => {
   const [errorMsg, setErrorMsg] = useState(null);
 
   async function updatePassword(formData) {
-    const { data, error } = await supabase.auth.updateUser({
+    const { error } = await supabase.auth.updateUser({
       password: formData.password,
     });
 

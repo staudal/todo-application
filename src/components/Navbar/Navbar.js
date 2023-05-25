@@ -1,7 +1,8 @@
 import createClient from 'src/lib/supabase-server';
+import Link from 'next/link';
+
 import SignInButton from './SignInButton';
 import SignOutButton from './SignOutButton';
-import Link from 'next/link';
 
 export default async function Navbar() {
   const supabase = createClient();
@@ -11,7 +12,7 @@ export default async function Navbar() {
   } = await supabase.auth.getUser();
 
   return (
-    <nav className="navbar py-3">
+    <nav className="py-3">
       <div className="mx-auto flex max-w-7xl items-center justify-between sm:px-6 lg:px-8">
         <Link className="text-xl font-bold hover:text-gray-500" href="/">
           Todoist

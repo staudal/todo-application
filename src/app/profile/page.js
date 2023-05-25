@@ -1,8 +1,7 @@
-import Link from 'next/link';
 import { redirect } from 'next/navigation';
 
 import SignOut from 'src/components/SignOut';
-import createClient from '@/lib/supabase-server';
+import createClient from '../../lib/supabase-server.js';
 
 export default async function Profile() {
   const supabase = createClient();

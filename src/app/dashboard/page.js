@@ -1,6 +1,7 @@
-import SignedIn from '@/components/Home/SignedIn';
 import createClient from 'src/lib/supabase-server';
 import { redirect } from 'next/navigation';
+
+import SignedIn from '../../components/Home/SignedIn.js';
 
 export default async function page() {
   const supabase = createClient();
@@ -13,7 +14,5 @@ export default async function page() {
     redirect('/auth/signin');
   }
 
-  if (user) {
-    return <SignedIn />;
-  }
+  return <SignedIn />;
 }

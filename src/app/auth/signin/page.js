@@ -1,6 +1,5 @@
 'use client';
 
-import { Fragment, useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import supabase from 'src/lib/supabase-browser';
 
@@ -8,12 +7,12 @@ import { useAuth } from 'src/components/AuthProvider';
 import Link from 'next/link';
 
 export default function Page() {
-  const { push } = useRouter();
+  const router = useRouter();
   const { user } = useAuth();
 
   useEffect(() => {
     if (user) {
-      push('/');
+      router.push('/dashboard');
     }
   }, [user]);
 
@@ -35,7 +34,7 @@ export default function Page() {
   }
 
   return (
-    <Fragment>
+    <>
       <div className="mx-auto flex flex-col items-center justify-center">
         <div className="w-full rounded-lg bg-white shadow sm:max-w-md md:mt-0 xl:p-0">
           <div className="space-y-4 p-6 sm:p-8 md:space-y-6">
@@ -105,6 +104,6 @@ export default function Page() {
         </div>
       </div>
       {errorMsg && <div className="text-red-600">{errorMsg}</div>}
-    </Fragment>
+    </>
   );
 }
