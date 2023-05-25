@@ -2,7 +2,7 @@
 
 import { useRouter } from 'next/navigation';
 import supabase from 'src/lib/supabase-browser';
-
+import { useEffect, useState } from 'react';
 import { useAuth } from 'src/components/AuthProvider';
 import Link from 'next/link';
 

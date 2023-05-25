@@ -14,18 +14,21 @@ export default async function Navbar() {
   return (
     <nav className="py-3">
       <div className="mx-auto flex max-w-7xl items-center justify-between sm:px-6 lg:px-8">
-        <Link className="text-xl font-bold hover:text-gray-500" href="/">
-          Todoist
-        </Link>
+        {user ? (
+          <Link className="text-xl font-bold hover:text-gray-500" href="/dashboard">
+            Todoist
+          </Link>
+        ) : (
+          <Link className="text-xl font-bold hover:text-gray-500" href="/">
+            Todoist
+          </Link>
+        )}
         <div className="flex items-center space-x-8">
-          <Link className="hover:text-gray-500" href="/dashboard">
-            Dashboard
-          </Link>
-          <Link className="hover:text-gray-500" href="/profile">
-            Profile
-          </Link>
-        </div>
-        <div className="flex items-center">
+          {user && (
+            <Link href="/profile" className="font-semibold text-gray-600">
+              Settings
+            </Link>
+          )}
           {user ? <SignOutButton /> : <SignInButton />}
         </div>
       </div>
