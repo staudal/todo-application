@@ -3,6 +3,8 @@ import createClient from 'src/lib/supabase-server';
 
 import Navbar from '../components/Navbar/Navbar.js';
 
+import '../styles/globals.css';
+
 // do not cache this layout
 export const revalidate = 0;
 
